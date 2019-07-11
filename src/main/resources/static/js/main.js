@@ -54,7 +54,13 @@ var options2 = {
         listLocation: "content",
         
         getValue: function(element) {
-		return element.name + " " + element.starttime;
+                const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+                var parts =element.date.split('-');
+                var mydate = new Date(parts[0], parts[1] - 1, parts[2]); 
+                
+                var formatted_date = mydate.getDate() + "-" + months[mydate.getMonth()] + "-" + mydate.getFullYear();
+                
+		return element.name + " " + formatted_date + " " + element.starttime;
 	},
         
         list: {
