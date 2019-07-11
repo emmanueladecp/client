@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org" >
+    <head>
+       
+    </head>
+    <body>
+        <div th:fragment="form">
+            <div class="container-fluid">
+                
+                <div class="row" style="margin-top:20px">
+                    
+                    <div class="col-sm-12">
+                        
+                        <form th:action="@{/}" th:object="${newForm}" method="post">
+                            <fieldset>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label th:for="custid">Customer ID</label>
+                                        <input type="text" th:field="*{custid}" class="form-control input-lg"
+                                                   placeholder="Customer ID" required="true" autofocus="true"/>
+                                        <input type="hidden" th:field="*{custidhidden}" />
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label th:for="movieid">Movie ID</label>
+                                        <input type="text" th:field="*{movieid}" class="form-control input-lg"
+                                                   placeholder="Movie ID" required="true" autofocus="true"/>
+                                        <input type="hidden" th:field="*{movieidhidden}" />
+                                    </div>
+                                </div>
+                            
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label th:for="custname">Customer Name</label>
+                                        <input type="text" th:field="*{custname}" class="form-control input-lg readonlyfield"
+                                               placeholder="Customer Name" readonly/>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label th:for="moviename">Movie Name</label>
+                                        <input type="text" th:field="*{moviename}" class="form-control input-lg readonlyfield"
+                                               placeholder="Movie Name" readonly/>
+                                    </div>
+
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label th:for="custphone">Customer Phone</label>
+                                        <input type="text" th:field="*{custphone}" class="form-control input-lg readonlyfield"
+                                               placeholder="Customer Phone" readonly/>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label th:for="movietime">Movie Time</label>
+                                        <input type="text" th:field="*{movietime}" class="form-control input-lg readonlyfield"
+                                               placeholder="Movie Time" readonly/>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label th:for="custemail">Customer Email</label>
+                                        <input type="text" th:field="*{custemail}" class="form-control input-lg readonlyfield"
+                                               placeholder="Customer Email" readonly/>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label th:for="moviebuy">Buy</label>
+                                        <input type="number" th:field="*{moviebuy}" class="form-control input-lg"
+                                               placeholder="Quantity Buy" value="1" min="1" max="4" required="true"/>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="col-xs-6 col-sm-6 col-md-6">
+                                        <input type="reset" class="btn btn-lg btn-danger btn-block" value="Reset"/>
+                                    </div>
+                                    
+                                    <div class="col-xs-6 col-sm-6 col-md-6">
+                                        <input type="submit" class="btn btn-lg btn-primary btn-block" value="Submit"/>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                        
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>
