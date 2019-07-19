@@ -32,9 +32,9 @@ var options = {
 
 		onSelectItemEvent: function() {
 			var value = $("#custid").getSelectedItemData().phone;
-                        var value2 = $("#custid").getSelectedItemData().name;
+                        var value2 = $("#custid").getSelectedItemData().email;
                         var value3 = $("#custid").getSelectedItemData().id;
-                        var value4 = $("#custid").getSelectedItemData().email;
+                        var value4 = $("#custid").getSelectedItemData().name;
 
 			$("#custphone").val(value).trigger("change");
                         $("#custemail").val(value2).trigger("change");
