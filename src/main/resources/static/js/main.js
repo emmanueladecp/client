@@ -26,15 +26,15 @@ var options = {
 		return "http://localhost:8080/api/v1/customers";
 	},
         listLocation: "content",
-        getValue: "id",
+        getValue: "name",
         
         list: {
 
 		onSelectItemEvent: function() {
 			var value = $("#custid").getSelectedItemData().phone;
-                        var value2 = $("#custid").getSelectedItemData().email;
+                        var value2 = $("#custid").getSelectedItemData().name;
                         var value3 = $("#custid").getSelectedItemData().id;
-                        var value4 = $("#custid").getSelectedItemData().name;
+                        var value4 = $("#custid").getSelectedItemData().email;
 
 			$("#custphone").val(value).trigger("change");
                         $("#custemail").val(value2).trigger("change");
@@ -42,7 +42,7 @@ var options = {
                         $("#custname").val(value4).trigger("change");
 
 		}
-	}
+	} 
 };
 
 $("#custid").easyAutocomplete(options);
