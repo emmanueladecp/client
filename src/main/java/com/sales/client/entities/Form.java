@@ -33,5 +33,6 @@ public class Form {
     private String movietime;
     private Integer moviebuy;
     private String movieidhidden;
+    private Integer moviestockhidden;
     
 }

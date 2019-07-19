@@ -26,7 +26,7 @@ var options = {
 		return "http://localhost:8080/api/v1/customers";
 	},
         listLocation: "content",
-        getValue: "name",
+        getValue: "id",
         
         list: {
 
@@ -34,10 +34,12 @@ var options = {
 			var value = $("#custid").getSelectedItemData().phone;
                         var value2 = $("#custid").getSelectedItemData().email;
                         var value3 = $("#custid").getSelectedItemData().id;
+                        var value4 = $("#custid").getSelectedItemData().name;
 
 			$("#custphone").val(value).trigger("change");
                         $("#custemail").val(value2).trigger("change");
                         $("#custidhidden").val(value3).trigger("change");
+                        $("#custname").val(value4).trigger("change");
 
 		}
 	}
@@ -69,10 +71,12 @@ var options2 = {
 			var value = $("#movieid").getSelectedItemData().name;
                         var value2 = $("#movieid").getSelectedItemData().starttime;
                         var value3 = $("#movieid").getSelectedItemData().id;
+                        var value4 = $("#movieid").getSelectedItemData().stock;
 
 			$("#moviename").val(value).trigger("change");
                         $("#movietime").val(value2).trigger("change");
                         $("#movieidhidden").val(value3).trigger("change");
+                        $("#moviestockhidden").val(value4).trigger("change");
 
 		}
 	}
