@@ -2,11 +2,11 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- */
+
 (function(){
     console.log("Hello World!");
 })();
-
+*/
 
 $(".readonlyfield").on('keydown paste', function(e){
         e.preventDefault();
@@ -20,6 +20,7 @@ $(".readonlyfield").click(function(e){
         e.preventDefault();
 });
 
+/*
 var options = {
     
 	url: function(phrase) {
@@ -83,3 +84,4 @@ var options2 = {
 };
 
 $("#movieid").easyAutocomplete(options2);
+*/
