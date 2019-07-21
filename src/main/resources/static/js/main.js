@@ -85,3 +85,25 @@ var options2 = {
 
 $("#movieid").easyAutocomplete(options2);
 */
+
+
+$(function() 
+    {
+            $("#movieid").autocomplete({
+                    source : function(request, response) {
+                            $.ajax({
+                                    url : "http://localhost:8080/movieSearch",
+                                    dataType : "json",
+                                    data : {
+                                            q : request.term
+                                    },
+                                    success : function(data) {
+                                            //alert(data);
+                                            console.log(data);
+                                            response(data);
+                                    }
+                            });
+                    },
+                    minLength : 2
+            });
+    });
