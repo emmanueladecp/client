@@ -20,7 +20,7 @@ $(".readonlyfield").click(function(e){
         e.preventDefault();
 });
 
-/*
+
 var options = {
     
 	url: function(phrase) {
@@ -84,26 +84,46 @@ var options2 = {
 };
 
 $("#movieid").easyAutocomplete(options2);
-*/
 
 
+/* 
 $(function() 
     {
             $("#movieid").autocomplete({
                     source : function(request, response) {
                             $.ajax({
-                                    url : "http://localhost:8080/movieSearch",
+                                    url : "http://localhost:8080/api/v1/movieSearch",
                                     dataType : "json",
                                     data : {
                                             q : request.term
                                     },
                                     success : function(data) {
-                                            //alert(data);
-                                            console.log(data);
-                                            response(data);
+                                              var transformed = $.map(data, function (el) {
+                                                return {
+                                                    label: el.name,
+                                                    value: el.name,
+                                                    id: el.id,
+                                                    starttime: el.starttime,
+                                                    stock:el.stock
+                                                };
+                                            });
+                                            response(transformed);
                                     }
                             });
                     },
-                    minLength : 2
+                          
+                    minLength : 2,
+                    
+                    select: function( event, ui ) {
+                        $( "#moviename" ).val( ui.item.label );
+                        $( "#movietime" ).val( ui.item.starttime );
+                        $( "#movieidhidden" ).val( ui.item.id );
+                        $( "#moviestockhidden" ).val( ui.item.stock );
+                        
+                        return false;
+                    }
+                    
             });
     });
+ * 
+ */
